@@ -28,6 +28,12 @@ private extension ListPresenter {
         ListDataFlow.CellViewModel.init(
             employeeName: response.name,
             phoneNumber: response.phoneNumber,
-            skills: response.skills)
+            skills: response.skills.joined(separator: Constants.skillsSeparator))
+    }
+}
+
+private extension ListPresenter {
+    enum Constants {
+        static let skillsSeparator: String = ", "
     }
 }

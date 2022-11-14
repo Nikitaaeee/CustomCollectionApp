@@ -22,6 +22,6 @@ extension ListDataFlow {
     struct CellViewModel {
         let employeeName: String
         let phoneNumber: String
-        let skills: [String]
+        let skills: String
     }
 }

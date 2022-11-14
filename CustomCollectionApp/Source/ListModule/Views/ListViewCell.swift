@@ -69,15 +69,11 @@ extension ListViewCell {
     func configure(with viewModel: ListDataFlow.CellViewModel) {
         nameLabel.text = viewModel.employeeName
         phoneNumberLabel.text = viewModel.phoneNumber
-        skillsValueLabel.text = convertSkillsToString(array: viewModel.skills)
+        skillsValueLabel.text = viewModel.skills
     }
 }
 
 private extension ListViewCell {
-    func convertSkillsToString(array: [String]) -> String {
-        return array.joined(separator: Constants.separator)
-    }
-    
     private func configureLayout() {
         self.layer.cornerRadius = Constants.cellCornerRadius
         self.layer.masksToBounds = true
@@ -179,7 +175,6 @@ private extension ListViewCell {
         static let skillsLabelText: String = "Main skills:"
         static let skillsLabelFontSize: CGFloat = 13.0
         static let skillsValueFontSize: CGFloat = 15.0
-        static let separator: String = ", "
         static let cellCornerRadius: CGFloat = 20
         static let leadingOffset: CGFloat = 10
         static let userImageViewSize: CGFloat = 60
