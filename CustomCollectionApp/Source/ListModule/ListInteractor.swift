@@ -13,32 +13,39 @@ protocol ListBussinesLogic: AnyObject {
 
 final class ListInteractor {
     
+    // MARK: - Properties
+    
     var presenter: ListPresentationLigic?
     var provider: ProvidesEmployeeData?
     
+    // MARK: - Lifecycle
+
     init(provider: ProvidesEmployeeData) {
         self.provider = provider
     }
 }
 
+    // MARK: - ListBussinesLogic
+
 extension ListInteractor: ListBussinesLogic {
     func fetchData() {
-        provider?.fetchData(complition: { [weak self] list in
+        provider?.fetchData(completion: { [weak self] list in
             guard
                 let self = self,
                 let list = list
             else {
                 return
             }
-            self.fetchViewModel(list: list.company)
+            self.fetchViewModel(list: list)
         })
     }
 }
 
+    // MARK: - Private
+
 private extension ListInteractor {
-    
-    func fetchViewModel(list: Company) {
-        let model = ListDataFlow.PresentationCollectionView.Response.init(employees: list.employees)
+    func fetchViewModel(list: [Employee]) {
+        let model = ListDataFlow.PresentationCollectionView.Response.init(employees: list)
         presenter?.presentData(response: model)
     }
 }

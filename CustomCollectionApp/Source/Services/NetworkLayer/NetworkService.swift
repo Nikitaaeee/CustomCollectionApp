@@ -48,10 +48,6 @@ final class NetworkService<EndPoint: EndPointType>: NetworkServiceRoutes {
             self.task?.resume()
         }
     }
-    
-    func cancel() {
-        self.task?.cancel()
-    }
 }
 
 private extension NetworkService {

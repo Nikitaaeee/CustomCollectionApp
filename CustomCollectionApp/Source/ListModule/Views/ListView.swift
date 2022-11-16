@@ -13,13 +13,19 @@ protocol DisplaysListView {
 
 final class ListView: UIView {
     
+    // MARK: - Properties
+    
     private let collectionManager: ManageListCollection
+    
+    // MARK: - Views
 
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collection.register(ListViewCell.self, forCellWithReuseIdentifier: Constants.identifier)
+        let collection = UICollectionView(frame: .zero,
+                                          collectionViewLayout: layout)
+        collection.register(ListViewCell.self,
+                            forCellWithReuseIdentifier: Constants.identifier)
         collection.backgroundColor = .white
         collection.showsHorizontalScrollIndicator = false
         collection.dataSource = collectionManager
@@ -43,6 +49,8 @@ final class ListView: UIView {
     }
 }
 
+    // MARK: - DisplaysListView
+
 extension ListView: DisplaysListView {
     func configure(with viewModel: ListDataFlow.PresentationCollectionView.ViewModel) {
         collectionManager.cells = viewModel.cells
@@ -50,9 +58,11 @@ extension ListView: DisplaysListView {
     }
 }
 
-extension ListView: ListCollectionManagerDelegate {
-    
-}
+    // MARK: - ListCollectionManagerDelegate
+
+extension ListView: ListCollectionManagerDelegate { }
+
+    // MARK: - Private
 
 private extension ListView {
     func addSubviews() {
@@ -70,7 +80,7 @@ private extension ListView {
         constraints.append(collectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor))
         constraints.append(collectionView.topAnchor.constraint(equalTo: self.topAnchor))
         constraints.append(collectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor))
-
+        
         NSLayoutConstraint.activate(constraints)
     }
 }

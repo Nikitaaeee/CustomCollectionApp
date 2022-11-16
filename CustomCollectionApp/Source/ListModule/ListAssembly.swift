@@ -13,8 +13,10 @@ struct ListViewAssembly: ModuleAssembly {
 
     func build(with _: Any?) throws -> ViewController {
         let viewController = ListViewController()
-        let networkService = ListNetworkManager()
-        let provider = EmployeeListProvider(networkService: networkService)
+        let networkManager = ListNetworkManager()
+        let employeeStorage = EmployeeStorage()
+        let provider = EmployeeListProvider(networkManager: networkManager,
+                                            employeStorage: employeeStorage)
         let interactor = ListInteractor(provider: provider)
         let presenter = ListPresenter()
         viewController.interactor = interactor

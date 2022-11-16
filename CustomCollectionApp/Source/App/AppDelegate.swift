@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return container
     }()
 
-    // MARK: - Core Data Saving support
+    // MARK: - Core Data Saving
 
     func saveContext () {
         let context = persistentContainer.viewContext

@@ -11,6 +11,8 @@ public enum ListEndPoint {
     case employeesList
 }
 
+    // MARK: - EndPointType
+
 extension ListEndPoint: EndPointType {
     static let version = "/v3"
 

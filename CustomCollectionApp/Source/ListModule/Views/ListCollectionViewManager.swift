@@ -16,17 +16,24 @@ protocol ListCollectionManagerDelegate {
 }
 
 final class ListCollectionManager: NSObject {
+    
+    // MARK: - Properties
+
     var cells = [ListDataFlow.CellViewModel]()
     var delegate: ListCollectionManagerDelegate?
 
 }
 
+    // MARK: - ManageListCollection
+
 extension ListCollectionManager: ManageListCollection {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
         return cells.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.identifier, for: indexPath) as? ListViewCell
         else {
@@ -39,8 +46,12 @@ extension ListCollectionManager: ManageListCollection {
     }
 }
 
+    // MARK: - UICollectionViewDelegateFlowLayout
+
 extension ListCollectionManager: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = UIScreen.main.bounds.size.width - Constants.widthOffset
         let height: CGFloat = Constants.cellHeight
         
@@ -50,13 +61,19 @@ extension ListCollectionManager: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout
                         collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        
         return Constants.minimumSpacing
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        
         return .zero
     }
 }
+
+    // MARK: - Constants
 
 private extension ListCollectionManager {
     private enum Constants {

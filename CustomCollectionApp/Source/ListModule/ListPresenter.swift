@@ -13,8 +13,13 @@ protocol ListPresentationLigic: AnyObject {
 }
 
 final class ListPresenter {
+    
+    // MARK: - Properties
+
     weak var viewController: ListViewDisplayLogic?
 }
+
+    // MARK: - ListPresentationLigic
 
 extension ListPresenter: ListPresentationLigic {
     func presentData(response: ListDataFlow.PresentationCollectionView.Response) {
@@ -22,6 +27,8 @@ extension ListPresenter: ListPresentationLigic {
         viewController?.displayEmployeeData(with: ListDataFlow.PresentationCollectionView.ViewModel(cells: modelForCell.sorted(by: {$0.employeeName < $1.employeeName})))
     }
 }
+
+    // MARK: - Private
 
 private extension ListPresenter {
     func makeCellViewModel(from response: Employee) -> ListDataFlow.CellViewModel {
@@ -31,6 +38,8 @@ private extension ListPresenter {
             skills: response.skills.joined(separator: Constants.skillsSeparator))
     }
 }
+
+    // MARK: - Constants
 
 private extension ListPresenter {
     enum Constants {

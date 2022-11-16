@@ -13,8 +13,15 @@ protocol ListViewDisplayLogic: AnyObject {
 
 final class ListViewController: UIViewController {
     
-    private lazy var contentView: DisplaysListView = ListView(collectionManager: ListCollectionManager())
+    // MARK: - Properties
+
     var interactor: ListBussinesLogic?
+
+    // MARK: - Views
+    
+    private lazy var contentView: DisplaysListView = ListView(collectionManager: ListCollectionManager())
+    
+    // MARK: - Lifecycle
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -34,6 +41,8 @@ final class ListViewController: UIViewController {
         interactor?.fetchData()
     }
 }
+
+    // MARK: - ListViewDisplayLogic
 
 extension ListViewController: ListViewDisplayLogic {
     func displayEmployeeData(with viewModel: ListDataFlow.PresentationCollectionView.ViewModel) {

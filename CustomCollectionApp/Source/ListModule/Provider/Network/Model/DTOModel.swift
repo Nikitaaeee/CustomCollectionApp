@@ -8,17 +8,20 @@
 import Foundation
 
 // MARK: - Welcome
+
 struct DTOModel: Codable {
     let company: Company
 }
 
 // MARK: - Company
+
 struct Company: Codable {
     let name: String
     let employees: [Employee]
 }
 
 // MARK: - Employee
+
 struct Employee: Codable {
     let name, phoneNumber: String
     let skills: [String]
