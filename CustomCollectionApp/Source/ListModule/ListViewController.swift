@@ -14,10 +14,10 @@ protocol ListViewDisplayLogic: AnyObject {
 final class ListViewController: UIViewController {
     
     // MARK: - Properties
-
+    
     var interactor: ListBussinesLogic?
     var router: ListRoutes?
-
+    
     // MARK: - Views
     
     private lazy var contentView: DisplaysListView = ListView(collectionManager: ListCollectionManager())
@@ -27,7 +27,7 @@ final class ListViewController: UIViewController {
     init() {
         super.init(nibName: nil, bundle: nil)
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -42,7 +42,11 @@ final class ListViewController: UIViewController {
         interactor?.fetchData()
         checkInitialInternetConnection()
     }
-    
+}
+
+// MARK: - Private
+
+private extension ListViewController {
     func checkInitialInternetConnection() {
         if !Reachability.isConnectedToNetwork(){
             router?.didRequestAlert(title: Constants.noConnectionTitle,
