@@ -19,7 +19,10 @@ struct ListViewAssembly: ModuleAssembly {
                                             employeStorage: employeeStorage)
         let interactor = ListInteractor(provider: provider)
         let presenter = ListPresenter()
+        let router = ListRouter()
         viewController.interactor = interactor
+        viewController.router = router
+        router.viewController = viewController
         interactor.presenter = presenter
         presenter.viewController = viewController
 

@@ -8,6 +8,9 @@
 import Foundation
 
 struct ListNetworkManager {
+    
+    // MARK: - Properites
+
     private let networkService = NetworkService<ListEndPoint>()
 
     func getEmployees(completion: @escaping (Result<DTOModel, Error>) -> ()) {
@@ -21,6 +24,8 @@ struct ListNetworkManager {
         }
     }
 }
+
+// MARK: - Private
 
 private extension ListNetworkManager {
     func handleNetworkResponse(_ response: HTTPURLResponse) -> Result<String, NetworkResponse> {

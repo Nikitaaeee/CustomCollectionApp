@@ -16,6 +16,7 @@ final class ListViewController: UIViewController {
     // MARK: - Properties
 
     var interactor: ListBussinesLogic?
+    var router: ListRoutes?
 
     // MARK: - Views
     
@@ -39,6 +40,14 @@ final class ListViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         interactor?.fetchData()
+        checkInitialInternetConnection()
+    }
+    
+    func checkInitialInternetConnection() {
+        if !Reachability.isConnectedToNetwork(){
+            router?.didRequestAlert(title: Constants.noConnectionTitle,
+                                    message: Constants.noConnectionMessage)
+        }
     }
 }
 
@@ -47,5 +56,12 @@ final class ListViewController: UIViewController {
 extension ListViewController: ListViewDisplayLogic {
     func displayEmployeeData(with viewModel: ListDataFlow.PresentationCollectionView.ViewModel) {
         contentView.configure(with: viewModel)
+    }
+}
+
+private extension ListViewController {
+    enum Constants {
+        static let noConnectionTitle: String = "No Internet Connection"
+        static let noConnectionMessage: String = "Make Sure Your Device Connected To Internet"
     }
 }

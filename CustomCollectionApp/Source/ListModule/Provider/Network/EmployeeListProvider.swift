@@ -38,9 +38,19 @@ extension EmployeeListProvider: ProvidesEmployeeData {
             fetchDataFromNetworkService(completion: completion)
         } else {
             isOutdated()
-            ? fetchDataFromNetworkService(completion: completion)
+            ? fetchIfOutdated(completion: completion)
             : completion(employeStorage.getAllItems())
         }
+    }
+}
+
+    // MARK: - Private
+
+private extension EmployeeListProvider {
+    func isOutdated() -> Bool {
+        return Date() - date > Constants.maximumCacheInterval
+        ? true
+        : false
     }
     
     func fetchDataFromNetworkService(completion: @escaping ([Employee]?) -> Void) {
@@ -57,15 +67,10 @@ extension EmployeeListProvider: ProvidesEmployeeData {
             }
         }
     }
-}
-
-    // MARK: - Private
-
-private extension EmployeeListProvider {
-    func isOutdated() -> Bool {
-        return Date() - date > Constants.maximumCacheInterval
-        ? true
-        : false
+    
+    func fetchIfOutdated(completion: @escaping ([Employee]?) -> Void) {
+        employeStorage.deleteAllItems()
+        fetchDataFromNetworkService(completion: completion)
     }
 }
 

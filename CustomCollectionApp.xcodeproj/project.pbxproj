@@ -22,6 +22,8 @@
 		488A8D0829252CD300EB4536 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488A8D0729252CD300EB4536 /* Date+Extension.swift */; };
 		488A8D0B2925315B00EB4536 /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488A8D0A2925315B00EB4536 /* UserDefaultsWrapper.swift */; };
 		488A8D0E29254E2D00EB4536 /* StorageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488A8D0D29254E2D00EB4536 /* StorageError.swift */; };
+		488A8D122925621A00EB4536 /* ListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488A8D112925621A00EB4536 /* ListRouter.swift */; };
+		488A8D15292564A400EB4536 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488A8D14292564A400EB4536 /* Reachability.swift */; };
 		48DD479D2920F08F00CFD73B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DD479C2920F08F00CFD73B /* AppDelegate.swift */; };
 		48DD479F2920F08F00CFD73B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DD479E2920F08F00CFD73B /* SceneDelegate.swift */; };
 		48DD47A62920F09100CFD73B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48DD47A52920F09100CFD73B /* Assets.xcassets */; };
@@ -59,6 +61,8 @@
 		488A8D0729252CD300EB4536 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		488A8D0A2925315B00EB4536 /* UserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapper.swift; sourceTree = "<group>"; };
 		488A8D0D29254E2D00EB4536 /* StorageError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageError.swift; sourceTree = "<group>"; };
+		488A8D112925621A00EB4536 /* ListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRouter.swift; sourceTree = "<group>"; };
+		488A8D14292564A400EB4536 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		48DD47992920F08F00CFD73B /* CustomCollectionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomCollectionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48DD479C2920F08F00CFD73B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48DD479E2920F08F00CFD73B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +152,22 @@
 			path = Encoders;
 			sourceTree = "<group>";
 		};
+		488A8D132925649100EB4536 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				488A8D16292564CE00EB4536 /* InternetConnectionCheck */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		488A8D16292564CE00EB4536 /* InternetConnectionCheck */ = {
+			isa = PBXGroup;
+			children = (
+				488A8D14292564A400EB4536 /* Reachability.swift */,
+			);
+			path = InternetConnectionCheck;
+			sourceTree = "<group>";
+		};
 		48DD47902920F08F00CFD73B = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +202,7 @@
 				48DD47BA2920F3AE00CFD73B /* ListModule */,
 				48DD47D6292102C500CFD73B /* Services */,
 				488A8CD1292272D000EB4536 /* CoreLayer */,
+				488A8D132925649100EB4536 /* Helpers */,
 				48DD47B32920F17600CFD73B /* Themes */,
 			);
 			path = Source;
@@ -239,6 +260,7 @@
 				48DD47C02920FB9C00CFD73B /* ListInteractor.swift */,
 				48DD47C22920FBA600CFD73B /* ListPresenter.swift */,
 				48DD47C42920FBB300CFD73B /* ListDataFlow.swift */,
+				488A8D112925621A00EB4536 /* ListRouter.swift */,
 				48DD47C62920FBBD00CFD73B /* ListAssembly.swift */,
 			);
 			path = ListModule;
@@ -300,8 +322,8 @@
 		48DD47D7292102D300CFD73B /* NetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
-				488A8D1029255D5200EB4536 /* Encoders */,
 				48DD47D82921032000CFD73B /* NetworkService.swift */,
+				488A8D1029255D5200EB4536 /* Encoders */,
 				487E09DA2921878700E2FE44 /* EndPointType.swift */,
 				487E09DE292187FB00E2FE44 /* HTTPTask.swift */,
 				487E09DC292187F000E2FE44 /* HTTPMethod.swift */,
@@ -387,6 +409,7 @@
 				487E09EB2921891900E2FE44 /* NetworkServiceRoutes.swift in Sources */,
 				48DD47B62920F1A300CFD73B /* AppColors.swift in Sources */,
 				488A8D0829252CD300EB4536 /* Date+Extension.swift in Sources */,
+				488A8D15292564A400EB4536 /* Reachability.swift in Sources */,
 				487E09DB2921878700E2FE44 /* EndPointType.swift in Sources */,
 				48DD479D2920F08F00CFD73B /* AppDelegate.swift in Sources */,
 				488A8D0B2925315B00EB4536 /* UserDefaultsWrapper.swift in Sources */,
@@ -396,6 +419,7 @@
 				488A8D0E29254E2D00EB4536 /* StorageError.swift in Sources */,
 				48DD47C12920FB9C00CFD73B /* ListInteractor.swift in Sources */,
 				48DD47DE29211F2600CFD73B /* ListViewCell.swift in Sources */,
+				488A8D122925621A00EB4536 /* ListRouter.swift in Sources */,
 				487E09E9292188E700E2FE44 /* NetworkResponseError.swift in Sources */,
 				48DD47C72920FBBD00CFD73B /* ListAssembly.swift in Sources */,
 				487E09E7292188A100E2FE44 /* JSONParameterEncoder.swift in Sources */,
