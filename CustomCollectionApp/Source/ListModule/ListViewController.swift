@@ -24,6 +24,7 @@ final class ListViewController: UIViewController {
     private lazy var rightBarButton: UIBarButtonItem = {
         let button = UIBarButtonItem()
         button.image = UIImage(systemName: Constants.refreshButtonImage)
+        button.tintColor = AppColors.darkGray.color
         button.style = .plain
         button.target = self
         button.action = #selector(barButtonPressed)

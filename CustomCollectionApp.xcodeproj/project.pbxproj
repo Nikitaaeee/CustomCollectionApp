@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		48726A5829260F3600118405 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48726A5729260F3600118405 /* NetworkMonitor.swift */; };
+		48726A5A2926229600118405 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48726A592926229600118405 /* UIColor+Extension.swift */; };
+		48726A5C292622AF00118405 /* CGFloat+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48726A5B292622AF00118405 /* CGFloat+Extension.swift */; };
 		487E09DB2921878700E2FE44 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487E09DA2921878700E2FE44 /* EndPointType.swift */; };
 		487E09DD292187F000E2FE44 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487E09DC292187F000E2FE44 /* HTTPMethod.swift */; };
 		487E09DF292187FB00E2FE44 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487E09DE292187FB00E2FE44 /* HTTPTask.swift */; };
@@ -46,6 +48,8 @@
 
 /* Begin PBXFileReference section */
 		48726A5729260F3600118405 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		48726A592926229600118405 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		48726A5B292622AF00118405 /* CGFloat+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extension.swift"; sourceTree = "<group>"; };
 		487E09DA2921878700E2FE44 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
 		487E09DC292187F000E2FE44 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		487E09DE292187FB00E2FE44 /* HTTPTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
@@ -243,7 +247,9 @@
 		48DD47B72920F2D700CFD73B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				48726A5B292622AF00118405 /* CGFloat+Extension.swift */,
 				488A8D0729252CD300EB4536 /* Date+Extension.swift */,
+				48726A592926229600118405 /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -419,8 +425,10 @@
 				48DD47C72920FBBD00CFD73B /* ListAssembly.swift in Sources */,
 				48726A5829260F3600118405 /* NetworkMonitor.swift in Sources */,
 				487E09E7292188A100E2FE44 /* JSONParameterEncoder.swift in Sources */,
+				48726A5C292622AF00118405 /* CGFloat+Extension.swift in Sources */,
 				488A8CFA292282A900EB4536 /* EmployeeStorage.swift in Sources */,
 				48DD47DC2921040800CFD73B /* ListCollectionViewManager.swift in Sources */,
+				48726A5A2926229600118405 /* UIColor+Extension.swift in Sources */,
 				488A8CD5292272FA00EB4536 /* EmployeeModel.xcdatamodeld in Sources */,
 				48DD47BC2920F3E200CFD73B /* ListViewController.swift in Sources */,
 				488A8D0129228CFF00EB4536 /* EmployeeEntity+CoreDataClass.swift in Sources */,
