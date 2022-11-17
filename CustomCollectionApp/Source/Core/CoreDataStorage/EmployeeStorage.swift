@@ -84,12 +84,17 @@ private extension EmployeeStorage {
     func mapToEntity(item: EmployeeEntity) -> Employee {
         guard let skills = item.skills,
               let number = item.phoneNumber,
-              let name = item.employeeName else { return Employee(name: Constants.mockText,
-                                                                  phoneNumber: Constants.mockText,
-                                                                  skills: [Constants.mockText]) }
-        let model = Employee.init(name: name,
-                                  phoneNumber: number,
-                                  skills: [skills])
+              let name = item.employeeName else { return Employee(
+                name: Constants.mockText,
+                phoneNumber: Constants.mockText,
+                skills: [Constants.mockText])
+            
+        }
+        let model = Employee.init(
+            name: name,
+            phoneNumber: number,
+            skills: [skills]
+        )
         
         return model
     }
