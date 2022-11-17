@@ -9,6 +9,7 @@ import Foundation
 
 protocol ListBussinesLogic: AnyObject {
     func fetchData()
+    func refreshData()
 }
 
 final class ListInteractor {
@@ -30,6 +31,18 @@ final class ListInteractor {
 extension ListInteractor: ListBussinesLogic {
     func fetchData() {
         provider?.fetchData(completion: { [weak self] list in
+            guard
+                let self = self,
+                let list = list
+            else {
+                return
+            }
+            self.fetchViewModel(list: list)
+        })
+    }
+    
+    func refreshData() {
+        provider?.refreshData(completion: { [weak self] list in
             guard
                 let self = self,
                 let list = list

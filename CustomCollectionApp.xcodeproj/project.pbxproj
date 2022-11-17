@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48726A5829260F3600118405 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48726A5729260F3600118405 /* NetworkMonitor.swift */; };
 		487E09DB2921878700E2FE44 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487E09DA2921878700E2FE44 /* EndPointType.swift */; };
 		487E09DD292187F000E2FE44 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487E09DC292187F000E2FE44 /* HTTPMethod.swift */; };
 		487E09DF292187FB00E2FE44 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487E09DE292187FB00E2FE44 /* HTTPTask.swift */; };
@@ -21,9 +22,7 @@
 		488A8D0229228CFF00EB4536 /* EmployeeEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488A8D0029228CFF00EB4536 /* EmployeeEntity+CoreDataProperties.swift */; };
 		488A8D0829252CD300EB4536 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488A8D0729252CD300EB4536 /* Date+Extension.swift */; };
 		488A8D0B2925315B00EB4536 /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488A8D0A2925315B00EB4536 /* UserDefaultsWrapper.swift */; };
-		488A8D0E29254E2D00EB4536 /* StorageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488A8D0D29254E2D00EB4536 /* StorageError.swift */; };
 		488A8D122925621A00EB4536 /* ListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488A8D112925621A00EB4536 /* ListRouter.swift */; };
-		488A8D15292564A400EB4536 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488A8D14292564A400EB4536 /* Reachability.swift */; };
 		48DD479D2920F08F00CFD73B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DD479C2920F08F00CFD73B /* AppDelegate.swift */; };
 		48DD479F2920F08F00CFD73B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DD479E2920F08F00CFD73B /* SceneDelegate.swift */; };
 		48DD47A62920F09100CFD73B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48DD47A52920F09100CFD73B /* Assets.xcassets */; };
@@ -46,6 +45,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		48726A5729260F3600118405 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		487E09DA2921878700E2FE44 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
 		487E09DC292187F000E2FE44 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		487E09DE292187FB00E2FE44 /* HTTPTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
@@ -60,9 +60,7 @@
 		488A8D0029228CFF00EB4536 /* EmployeeEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmployeeEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		488A8D0729252CD300EB4536 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		488A8D0A2925315B00EB4536 /* UserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapper.swift; sourceTree = "<group>"; };
-		488A8D0D29254E2D00EB4536 /* StorageError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageError.swift; sourceTree = "<group>"; };
 		488A8D112925621A00EB4536 /* ListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRouter.swift; sourceTree = "<group>"; };
-		488A8D14292564A400EB4536 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		48DD47992920F08F00CFD73B /* CustomCollectionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomCollectionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48DD479C2920F08F00CFD73B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48DD479E2920F08F00CFD73B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,7 +134,6 @@
 			isa = PBXGroup;
 			children = (
 				488A8CF9292282A900EB4536 /* EmployeeStorage.swift */,
-				488A8D0D29254E2D00EB4536 /* StorageError.swift */,
 				488A8D0C2925437300EB4536 /* CoreDataStack */,
 			);
 			path = CoreDataStorage;
@@ -163,7 +160,7 @@
 		488A8D16292564CE00EB4536 /* InternetConnectionCheck */ = {
 			isa = PBXGroup;
 			children = (
-				488A8D14292564A400EB4536 /* Reachability.swift */,
+				48726A5729260F3600118405 /* NetworkMonitor.swift */,
 			);
 			path = InternetConnectionCheck;
 			sourceTree = "<group>";
@@ -409,19 +406,18 @@
 				487E09EB2921891900E2FE44 /* NetworkServiceRoutes.swift in Sources */,
 				48DD47B62920F1A300CFD73B /* AppColors.swift in Sources */,
 				488A8D0829252CD300EB4536 /* Date+Extension.swift in Sources */,
-				488A8D15292564A400EB4536 /* Reachability.swift in Sources */,
 				487E09DB2921878700E2FE44 /* EndPointType.swift in Sources */,
 				48DD479D2920F08F00CFD73B /* AppDelegate.swift in Sources */,
 				488A8D0B2925315B00EB4536 /* UserDefaultsWrapper.swift in Sources */,
 				48DD47C52920FBB300CFD73B /* ListDataFlow.swift in Sources */,
 				48DD47BE2920FAE400CFD73B /* ListView.swift in Sources */,
 				48DD47D32921018D00CFD73B /* ListNetworkManager.swift in Sources */,
-				488A8D0E29254E2D00EB4536 /* StorageError.swift in Sources */,
 				48DD47C12920FB9C00CFD73B /* ListInteractor.swift in Sources */,
 				48DD47DE29211F2600CFD73B /* ListViewCell.swift in Sources */,
 				488A8D122925621A00EB4536 /* ListRouter.swift in Sources */,
 				487E09E9292188E700E2FE44 /* NetworkResponseError.swift in Sources */,
 				48DD47C72920FBBD00CFD73B /* ListAssembly.swift in Sources */,
+				48726A5829260F3600118405 /* NetworkMonitor.swift in Sources */,
 				487E09E7292188A100E2FE44 /* JSONParameterEncoder.swift in Sources */,
 				488A8CFA292282A900EB4536 /* EmployeeStorage.swift in Sources */,
 				48DD47DC2921040800CFD73B /* ListCollectionViewManager.swift in Sources */,

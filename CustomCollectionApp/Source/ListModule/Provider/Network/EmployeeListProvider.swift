@@ -9,6 +9,7 @@ import Foundation
 
 protocol ProvidesEmployeeData: AnyObject {
     func fetchData(completion: @escaping ([Employee]?) -> Void)
+    func refreshData(completion: @escaping  ([Employee]?) -> Void)
 }
 
 final class EmployeeListProvider {
@@ -42,6 +43,10 @@ extension EmployeeListProvider: ProvidesEmployeeData {
             : completion(employeStorage.getAllItems())
         }
     }
+    
+    func refreshData(completion: @escaping  ([Employee]?) -> Void) {
+        fetchDataFromNetworkService(completion: completion)
+    }
 }
 
     // MARK: - Private
@@ -59,6 +64,7 @@ private extension EmployeeListProvider {
             case .success(let employees):
                 DispatchQueue.main.async {
                     completion(employees.company.employees)
+                    self.employeStorage.deleteAllItems()
                     self.employeStorage.save(items: employees.company.employees)
                     self.date = Date()
                 }

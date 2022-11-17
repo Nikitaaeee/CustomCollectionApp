@@ -33,7 +33,7 @@ extension EmployeeStorage: EmployeeStorageMainFunctional {
             let list = try context.fetch(EmployeeEntity.fetchRequest())
             employeeList = list.map({mapToEntity(item: $0)})
         } catch {
-            
+            print(error.localizedDescription)
         }
         
         return employeeList
@@ -49,7 +49,7 @@ extension EmployeeStorage: EmployeeStorageMainFunctional {
             do {
                 try context.save()
             } catch {
-                
+                print(error.localizedDescription)
             }
         }
     }
@@ -71,10 +71,10 @@ extension EmployeeStorage: EmployeeStorageMainFunctional {
             fetchRequest: EmployeeEntity.fetchRequest())
         do {
             _ = try context.execute(deleteRequest)
-                as? NSBatchDeleteResult
+            as? NSBatchDeleteResult
             try context.save()
         } catch {
-            
+            print(error.localizedDescription)
         }
     }
 }

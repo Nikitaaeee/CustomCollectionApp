@@ -21,6 +21,15 @@ final class ListViewController: UIViewController {
     // MARK: - Views
     
     private lazy var contentView: DisplaysListView = ListView(collectionManager: ListCollectionManager())
+    private lazy var rightBarButton: UIBarButtonItem = {
+        let button = UIBarButtonItem()
+        button.image = UIImage(systemName: Constants.refreshButtonImage)
+        button.style = .plain
+        button.target = self
+        button.action = #selector(barButtonPressed)
+        
+        return button
+    }()
     
     // MARK: - Lifecycle
     
@@ -40,18 +49,38 @@ final class ListViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         interactor?.fetchData()
-        checkInitialInternetConnection()
+        addConnectionObserver()
+        configureNavigationBar()
     }
 }
 
 // MARK: - Private
 
 private extension ListViewController {
-    func checkInitialInternetConnection() {
-        if !Reachability.isConnectedToNetwork(){
-            router?.didRequestAlert(title: Constants.noConnectionTitle,
-                                    message: Constants.noConnectionMessage)
+    func configureNavigationBar() {
+        navigationItem.rightBarButtonItem = rightBarButton
+    }
+    
+    func addConnectionObserver() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(self.showOfflineDeviceUI(notification:)),
+                                               name: NSNotification.Name.connectivityStatus,
+                                               object: nil)
+    }
+    
+    @objc
+    func showOfflineDeviceUI(notification: Notification) {
+        if !NetworkMonitor.shared.isConnected {
+            DispatchQueue.main.async {
+                self.router?.didRequestAlert(title: Constants.noConnectionTitle,
+                                             message: Constants.noConnectionMessage)
+            }
         }
+    }
+    
+    @objc
+    func barButtonPressed() {
+        interactor?.refreshData()
     }
 }
 
@@ -65,6 +94,7 @@ extension ListViewController: ListViewDisplayLogic {
 
 private extension ListViewController {
     enum Constants {
+        static let refreshButtonImage: String = "arrow.clockwise.icloud.fill"
         static let noConnectionTitle: String = "No Internet Connection"
         static let noConnectionMessage: String = "Make Sure Your Device Connected To Internet"
     }
