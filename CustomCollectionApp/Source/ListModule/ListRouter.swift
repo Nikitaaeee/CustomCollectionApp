@@ -23,16 +23,20 @@ final class ListRouter {
 extension ListRouter: ListRoutes {
     func didRequestAlert(title: String, message: String) {
         let alertController = UIAlertController(
-                                    title: title,
-                                    message: message,
-                                    preferredStyle: .alert
+            title: title,
+            message: message,
+            preferredStyle: .alert
         )
-        let okAction = UIAlertAction(title: Constants.titleText,
-                                     style: .default)
+        let okAction = UIAlertAction(
+            title: Constants.titleText,
+            style: .default
+        )
         alertController.addAction(okAction)
-        self.viewController?.present(alertController,
-                                     animated: true,
-                                     completion: nil)
+        self.viewController?.present(
+            alertController,
+            animated: true,
+            completion: nil
+        )
     }
 }
 
