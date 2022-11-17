@@ -23,4 +23,4 @@ CLEAN SWIFT использовался для:
 
 Скриншот:
 
-![Simulator Screen Shot - iPhone 14 Pro - 2022-11-17 at 10 27 36 — средний размер](https://user-images.githubusercontent.com/75203988/202383391-954e0ef9-5400-4821-aa46-78b61a28b961.jpeg)
+![Simulator Screen Shot - iPhone 14 Pro - 2022-11-17 at 11 07 09 — средний размер](https://user-images.githubusercontent.com/75203988/202390977-c5fa0c88-47d5-4e75-84f8-148fd1f7602c.jpeg)
