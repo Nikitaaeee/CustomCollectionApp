@@ -16,7 +16,7 @@ final class ListInteractor {
     
     // MARK: - Properties
     
-    var presenter: ListPresentationLigic?
+    var presenter: ListPresentationLogic?
     private var provider: ProvidesEmployeeData?
     
     // MARK: - Lifecycle
@@ -37,7 +37,7 @@ extension ListInteractor: ListBussinesLogic {
             else {
                 return
             }
-            self.fetchViewModel(list: list)
+            self.present(list: list)
         })
     }
     
@@ -49,7 +49,7 @@ extension ListInteractor: ListBussinesLogic {
             else {
                 return
             }
-            self.fetchViewModel(list: list)
+            self.present(list: list)
         })
     }
 }
@@ -57,7 +57,7 @@ extension ListInteractor: ListBussinesLogic {
 // MARK: - Private
 
 private extension ListInteractor {
-    func fetchViewModel(list: [Employee]) {
+    func present(list: [Employee]) {
         let model = ListDataFlow.PresentationCollectionView.Response.init(employees: list)
         presenter?.presentData(response: model)
     }

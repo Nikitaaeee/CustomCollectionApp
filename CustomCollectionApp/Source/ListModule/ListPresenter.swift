@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol ListPresentationLigic: AnyObject {
+protocol ListPresentationLogic: AnyObject {
     func presentData(response: ListDataFlow.PresentationCollectionView.Response)
 
 }
@@ -21,7 +21,7 @@ final class ListPresenter {
 
 // MARK: - ListPresentationLigic
 
-extension ListPresenter: ListPresentationLigic {
+extension ListPresenter: ListPresentationLogic {
     func presentData(response: ListDataFlow.PresentationCollectionView.Response) {
         let modelForCell = response.employees.compactMap({ makeCellViewModel(from: $0)})
         viewController?.displayEmployeeData(with: ListDataFlow.PresentationCollectionView.ViewModel(cells: modelForCell.sorted(by: {$0.employeeName < $1.employeeName})))
@@ -35,7 +35,8 @@ private extension ListPresenter {
         ListDataFlow.CellViewModel.init(
             employeeName: response.name,
             phoneNumber: response.phoneNumber,
-            skills: response.skills.joined(separator: Constants.skillsSeparator))
+            skills: response.skills.joined(separator: Constants.skillsSeparator)
+        )
     }
 }
 

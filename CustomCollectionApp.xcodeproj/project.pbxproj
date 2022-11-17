@@ -99,13 +99,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		488A8CD1292272D000EB4536 /* CoreLayer */ = {
+		488A8CD1292272D000EB4536 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				48DD47D6292102C500CFD73B /* Services */,
 				488A8D0F2925592100EB4536 /* CoreDataStorage */,
 				488A8D092925314B00EB4536 /* UserDefaultsStorage */,
 			);
-			path = CoreLayer;
+			path = Core;
 			sourceTree = "<group>";
 		};
 		488A8CD2292272E300EB4536 /* EmployeeEntity */ = {
@@ -201,8 +202,7 @@
 				48DD47C82920FDC800CFD73B /* Protocols */,
 				48DD47B72920F2D700CFD73B /* Extensions */,
 				48DD47BA2920F3AE00CFD73B /* ListModule */,
-				48DD47D6292102C500CFD73B /* Services */,
-				488A8CD1292272D000EB4536 /* CoreLayer */,
+				488A8CD1292272D000EB4536 /* Core */,
 				488A8D132925649100EB4536 /* Helpers */,
 				48DD47B32920F17600CFD73B /* Themes */,
 			);
@@ -317,12 +317,12 @@
 		48DD47D6292102C500CFD73B /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				48DD47D7292102D300CFD73B /* NetworkLayer */,
+				48DD47D7292102D300CFD73B /* Network */,
 			);
 			path = Services;
 			sourceTree = "<group>";
 		};
-		48DD47D7292102D300CFD73B /* NetworkLayer */ = {
+		48DD47D7292102D300CFD73B /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				48DD47D82921032000CFD73B /* NetworkService.swift */,
@@ -333,7 +333,7 @@
 				487E09E8292188E700E2FE44 /* NetworkResponseError.swift */,
 				487E09EA2921891900E2FE44 /* NetworkServiceRoutes.swift */,
 			);
-			path = NetworkLayer;
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -23,9 +23,9 @@ final class ListRouter {
 extension ListRouter: ListRoutes {
     func didRequestAlert(title: String, message: String) {
         let alertController = UIAlertController(
-            title: title,
-            message: message,
-            preferredStyle: .alert
+                                    title: title,
+                                    message: message,
+                                    preferredStyle: .alert
         )
         let okAction = UIAlertAction(title: Constants.titleText,
                                      style: .default)

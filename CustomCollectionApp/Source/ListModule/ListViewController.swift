@@ -63,10 +63,12 @@ private extension ListViewController {
     }
     
     func addConnectionObserver() {
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(self.showOfflineDeviceUI(notification:)),
-                                               name: NSNotification.Name.connectivityStatus,
-                                               object: nil)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.showOfflineDeviceUI(notification:)),
+            name: NSNotification.Name.connectivityStatus,
+            object: nil
+        )
     }
     
     @objc
