@@ -27,10 +27,12 @@ extension ListRouter: ListRoutes {
             message: message,
             preferredStyle: .alert
         )
+        
         let okAction = UIAlertAction(
             title: Constants.titleText,
             style: .default
         )
+        
         alertController.addAction(okAction)
         self.viewController?.present(
             alertController,
