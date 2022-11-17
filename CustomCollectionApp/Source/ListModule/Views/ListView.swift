@@ -22,7 +22,6 @@ final class ListView: UIView {
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = 10
         layout.minimumInteritemSpacing = .zero
         let collection = UICollectionView(frame: .zero,
                                           collectionViewLayout: layout)

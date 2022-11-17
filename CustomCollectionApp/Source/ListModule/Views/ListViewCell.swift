@@ -14,7 +14,6 @@ final class ListViewCell: UICollectionViewCell {
     private var userImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: Constants.personImageName)
-        imageView.tintColor = .random()
         
         return imageView
     }()
