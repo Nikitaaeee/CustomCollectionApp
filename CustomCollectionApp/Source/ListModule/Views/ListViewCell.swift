@@ -73,7 +73,7 @@ final class ListViewCell: UICollectionViewCell {
     }
 }
 
-    // MARK: - DisplaysListViewCell
+// MARK: - DisplaysListViewCell
 
 extension ListViewCell {
     func configure(with viewModel: ListDataFlow.CellViewModel) {
@@ -83,7 +83,7 @@ extension ListViewCell {
     }
 }
 
-    // MARK: - Private
+// MARK: - Private
 
 private extension ListViewCell {
     private func configureLayout() {
@@ -92,7 +92,7 @@ private extension ListViewCell {
     }
 }
 
-    // MARK: - Constraints
+// MARK: - Constraints
 
 private extension ListViewCell {
     func addSubviews() {
@@ -116,8 +116,8 @@ private extension ListViewCell {
     func makeImageViewConstraints() {
         userImage.translatesAutoresizingMaskIntoConstraints = false
         var constraints = [NSLayoutConstraint]()
-        constraints.append(userImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Constants.leadingOffset))
-        constraints.append(userImage.centerYAnchor.constraint(equalTo: self.centerYAnchor))
+        constraints.append(userImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.leadingOffset))
+        constraints.append(userImage.centerYAnchor.constraint(equalTo: centerYAnchor))
         constraints.append(userImage.heightAnchor.constraint(equalToConstant: Constants.userImageViewSize))
         constraints.append(userImage.widthAnchor.constraint(equalToConstant: Constants.userImageViewSize))
 
@@ -127,10 +127,10 @@ private extension ListViewCell {
     func makeNameLabelConstraints() {
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         var constraints = [NSLayoutConstraint]()
-        constraints.append(nameLabel.leadingAnchor.constraint(equalTo: self.userImage.trailingAnchor, constant: Constants.leadingOffset))
-        constraints.append(nameLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor))
-        constraints.append(nameLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: Constants.smallOffset))
-        constraints.append(nameLabel.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: Constants.bigMultiplier))
+        constraints.append(nameLabel.leadingAnchor.constraint(equalTo: userImage.trailingAnchor, constant: Constants.leadingOffset))
+        constraints.append(nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor))
+        constraints.append(nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: Constants.smallOffset))
+        constraints.append(nameLabel.heightAnchor.constraint(equalTo: heightAnchor, multiplier: Constants.bigMultiplier))
 
         NSLayoutConstraint.activate(constraints)
     }
@@ -138,10 +138,10 @@ private extension ListViewCell {
     func makePhoneImageViewConstraints() {
         phoneImageView.translatesAutoresizingMaskIntoConstraints = false
         var constraints = [NSLayoutConstraint]()
-        constraints.append(phoneImageView.leadingAnchor.constraint(equalTo: self.userImage.trailingAnchor, constant: Constants.leadingOffset))
+        constraints.append(phoneImageView.leadingAnchor.constraint(equalTo: userImage.trailingAnchor, constant: Constants.leadingOffset))
         constraints.append(phoneImageView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor))
-        constraints.append(phoneImageView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: Constants.mediumMultiplier))
-        constraints.append(phoneImageView.widthAnchor.constraint(equalTo: self.heightAnchor, multiplier: Constants.smallMultiplier))
+        constraints.append(phoneImageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: Constants.mediumMultiplier))
+        constraints.append(phoneImageView.widthAnchor.constraint(equalTo: heightAnchor, multiplier: Constants.smallMultiplier))
 
         NSLayoutConstraint.activate(constraints)
     }
@@ -149,8 +149,8 @@ private extension ListViewCell {
     func makePhoneNumberConstraints() {
         phoneNumberLabel.translatesAutoresizingMaskIntoConstraints = false
         var constraints = [NSLayoutConstraint]()
-        constraints.append(phoneNumberLabel.leadingAnchor.constraint(equalTo: self.phoneImageView.trailingAnchor, constant: Constants.smallOffset))
-        constraints.append(phoneNumberLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor))
+        constraints.append(phoneNumberLabel.leadingAnchor.constraint(equalTo: phoneImageView.trailingAnchor, constant: Constants.smallOffset))
+        constraints.append(phoneNumberLabel.trailingAnchor.constraint(equalTo: trailingAnchor))
         constraints.append(phoneNumberLabel.topAnchor.constraint(equalTo: phoneImageView.topAnchor))
         constraints.append(phoneNumberLabel.heightAnchor.constraint(equalTo: phoneImageView.heightAnchor))
 
@@ -161,9 +161,9 @@ private extension ListViewCell {
         skillsLabel.translatesAutoresizingMaskIntoConstraints = false
         var constraints = [NSLayoutConstraint]()
         constraints.append(skillsLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor))
-        constraints.append(skillsLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor))
+        constraints.append(skillsLabel.trailingAnchor.constraint(equalTo: trailingAnchor))
         constraints.append(skillsLabel.topAnchor.constraint(equalTo: phoneImageView.bottomAnchor, constant: Constants.skillsLabelTopOffset))
-        constraints.append(skillsLabel.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: Constants.mediumMultiplier))
+        constraints.append(skillsLabel.heightAnchor.constraint(equalTo: heightAnchor, multiplier: Constants.mediumMultiplier))
 
         NSLayoutConstraint.activate(constraints)
     }
@@ -172,15 +172,15 @@ private extension ListViewCell {
         skillsValueLabel.translatesAutoresizingMaskIntoConstraints = false
         var constraints = [NSLayoutConstraint]()
         constraints.append(skillsValueLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor))
-        constraints.append(skillsValueLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor))
+        constraints.append(skillsValueLabel.trailingAnchor.constraint(equalTo: trailingAnchor))
         constraints.append(skillsValueLabel.topAnchor.constraint(equalTo: skillsLabel.bottomAnchor))
-        constraints.append(skillsValueLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: Constants.skillsValueLabelBottomOffset))
+        constraints.append(skillsValueLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: Constants.skillsValueLabelBottomOffset))
 
         NSLayoutConstraint.activate(constraints)
     }
 }
 
-    // MARK: - Constants
+// MARK: - Constants
 
 private extension ListViewCell {
     enum Constants {

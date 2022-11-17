@@ -1,5 +1,5 @@
 //
-//  CoreDataProvider.swift
+//  EmployeeStorage.swift
 //  CustomCollectionApp
 //
 //  Created by Nikita Kirshin on 14.11.2022.
@@ -33,7 +33,7 @@ extension EmployeeStorage: EmployeeStorageMainFunctional {
             let list = try context.fetch(EmployeeEntity.fetchRequest())
             employeeList = list.map({mapToEntity(item: $0)})
         } catch {
-            print(error.localizedDescription)
+            print("\(Constants.fetchErrorText) \(error.localizedDescription)")
         }
         
         return employeeList
@@ -49,7 +49,7 @@ extension EmployeeStorage: EmployeeStorageMainFunctional {
             do {
                 try context.save()
             } catch {
-                print(error.localizedDescription)
+                print("\(Constants.saveErrorText) \(error.localizedDescription)")
             }
         }
     }
@@ -61,7 +61,6 @@ extension EmployeeStorage: EmployeeStorageMainFunctional {
             
             return count == .zero
         } catch {
-            
             return true
         }
     }
@@ -74,12 +73,12 @@ extension EmployeeStorage: EmployeeStorageMainFunctional {
             as? NSBatchDeleteResult
             try context.save()
         } catch {
-            print(error.localizedDescription)
+            print("\(Constants.deleteErrorText) \(error.localizedDescription)")
         }
     }
 }
 
-    // MARK: - Mapping
+// MARK: - Mapping
 
 private extension EmployeeStorage {
     func mapToEntity(item: EmployeeEntity) -> Employee {
@@ -96,12 +95,16 @@ private extension EmployeeStorage {
     }
 }
 
-    // MARK: - Constants
+// MARK: - Constants
 
 private extension EmployeeStorage {
     enum Constants {
         static let separatorText: String = ", "
         static let entityName: String = "EmployeeEntity"
         static let mockText: String = ""
+        static let fetchErrorText: String = "Failed to fecth list from sotrage, error:"
+        static let saveErrorText: String = "Failed to save employee list to storage, error:"
+        static let deleteErrorText: String = "Failed to batch delete employee data from storage, error:"
+
     }
 }

@@ -17,7 +17,7 @@ final class ListInteractor {
     // MARK: - Properties
     
     var presenter: ListPresentationLigic?
-    var provider: ProvidesEmployeeData?
+    private var provider: ProvidesEmployeeData?
     
     // MARK: - Lifecycle
 
@@ -26,7 +26,7 @@ final class ListInteractor {
     }
 }
 
-    // MARK: - ListBussinesLogic
+// MARK: - ListBussinesLogic
 
 extension ListInteractor: ListBussinesLogic {
     func fetchData() {
@@ -54,7 +54,7 @@ extension ListInteractor: ListBussinesLogic {
     }
 }
 
-    // MARK: - Private
+// MARK: - Private
 
 private extension ListInteractor {
     func fetchViewModel(list: [Employee]) {

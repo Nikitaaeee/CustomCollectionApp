@@ -12,10 +12,7 @@ protocol EndPointType {
     var httpMethod: HTTPMethod { get }
     var task: HTTPTask { get }
     var headers: HTTPHeaders? { get }
-}
-
-enum EndPointAPI {
-    static let scheme = "https"
-    static let hostURL = "run.mocky.io"
+    var scheme: String { get }
+    var hostURL: String { get }
 }
 

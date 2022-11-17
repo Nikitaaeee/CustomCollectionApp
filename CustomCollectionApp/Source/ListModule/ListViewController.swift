@@ -86,13 +86,15 @@ private extension ListViewController {
     }
 }
 
-    // MARK: - ListViewDisplayLogic
+// MARK: - ListViewDisplayLogic
 
 extension ListViewController: ListViewDisplayLogic {
     func displayEmployeeData(with viewModel: ListDataFlow.PresentationCollectionView.ViewModel) {
         contentView.configure(with: viewModel)
     }
 }
+
+// MARK: - Constants
 
 private extension ListViewController {
     enum Constants {

@@ -10,38 +10,37 @@ import Foundation
 final class NetworkService<EndPoint: EndPointType>: NetworkServiceRoutes {
     private var task: URLSessionTask?
 
-    func sendRequest<T: Decodable>(_ route: EndPoint, type: T.Type, complition: @escaping RequestResult<T>) {
+    func sendRequest<T: Decodable>(_ route: EndPoint, type: T.Type, completion: @escaping RequestResultCompletion<T>) {
         let session = URLSession.shared
 
         do {
             guard let request = try self.buildRequest(from: route) else { return }
             task = session.dataTask(with: request, completionHandler: { data, response, error in
                 guard let data = data, error == nil else {
-                    complition(.failure(NetworkError.connectionFailed))
+                    completion(.failure(NetworkError.connectionFailed))
                     return
                 }
         
                 guard let response = response as? HTTPURLResponse else { return }
                 switch response.statusCode {
                 case 200..<299:
-                    complition(.failure(.successfulConnection))
+                    completion(.failure(.successfulConnection))
                 case 300..<399:
-                    complition(.failure(NetworkError.redirection))
+                    completion(.failure(NetworkError.redirection))
                 case 400..<499:
-                    complition(.failure(NetworkError.clientError))
+                    completion(.failure(NetworkError.clientError))
                 case 500..<599:
-                    complition(.failure(NetworkError.serverError))
+                    completion(.failure(NetworkError.serverError))
                 default:
-                    complition(.failure(NetworkError.connectionFailed))
+                    completion(.failure(NetworkError.connectionFailed))
                 }
                 
                 guard let data = self.jsonDecode(type: type.self, from: data) else { return }
-                complition(.success(data))
+                completion(.success(data))
             })
         } catch {
             print(error.localizedDescription)
-            complition(.failure(error as! NetworkError))
-            
+            completion(.failure(error as! NetworkError))
         }
         
         DispatchQueue.main.async {
@@ -77,15 +76,14 @@ private extension NetworkService {
     
     func configureURL(route: EndPoint) -> URL? {
         var urlComponents = URLComponents()
-        urlComponents.scheme = EndPointAPI.scheme
-        urlComponents.host = EndPointAPI.hostURL
+        urlComponents.scheme = route.scheme
+        urlComponents.host = route.hostURL
         urlComponents.path = route.path
 
         return urlComponents.url
     }
     
     func configureParameters(bodyParameters: Parameters?, urlParameters: Parameters?, request: inout URLRequest) throws {
-        
         do {
             if let bodyParameters = bodyParameters {
                 try JSONParameterEncoder.encode(urlRequest: &request, with: bodyParameters)

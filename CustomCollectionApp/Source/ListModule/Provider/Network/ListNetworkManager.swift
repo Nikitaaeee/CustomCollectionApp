@@ -25,7 +25,7 @@ struct ListNetworkManager {
     }
 }
 
-    // MARK: - Constants
+// MARK: - Constants
 
 private enum Constants {
     enum RequestErrors {

@@ -24,7 +24,7 @@ final class ListCollectionManager: NSObject {
 
 }
 
-    // MARK: - ManageListCollection
+// MARK: - ManageListCollection
 
 extension ListCollectionManager: ManageListCollection {
     func collectionView(_ collectionView: UICollectionView,
@@ -46,34 +46,20 @@ extension ListCollectionManager: ManageListCollection {
     }
 }
 
-    // MARK: - UICollectionViewDelegateFlowLayout
+// MARK: - UICollectionViewDelegateFlowLayout
 
 extension ListCollectionManager: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = UIScreen.main.bounds.size.width - Constants.widthOffset
+        let width = collectionView.bounds.width - Constants.widthOffset
         let height: CGFloat = Constants.cellHeight
         
         return CGSize(width: width, height: height)
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout
-                        collectionViewLayout: UICollectionViewLayout,
-                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        
-        return Constants.minimumSpacing
-    }
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        
-        return .zero
-    }
 }
 
-    // MARK: - Constants
+// MARK: - Constants
 
 private extension ListCollectionManager {
     private enum Constants {

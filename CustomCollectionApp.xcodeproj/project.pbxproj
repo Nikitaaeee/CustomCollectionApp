@@ -298,8 +298,8 @@
 		48DD47CE2921004800CFD73B /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				48DD47CC2921001E00CFD73B /* EmployeeListProvider.swift */,
 				48DD47D22921018D00CFD73B /* ListNetworkManager.swift */,
+				48DD47CC2921001E00CFD73B /* EmployeeListProvider.swift */,
 				48DD47D4292101DA00CFD73B /* ListEndPoint.swift */,
 				48DD47CF2921007200CFD73B /* Model */,
 			);

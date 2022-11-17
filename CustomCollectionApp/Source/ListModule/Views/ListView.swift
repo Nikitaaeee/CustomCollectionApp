@@ -22,6 +22,8 @@ final class ListView: UIView {
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
+        layout.minimumLineSpacing = 10
+        layout.minimumInteritemSpacing = .zero
         let collection = UICollectionView(frame: .zero,
                                           collectionViewLayout: layout)
         collection.register(ListViewCell.self,
@@ -49,7 +51,7 @@ final class ListView: UIView {
     }
 }
 
-    // MARK: - DisplaysListView
+// MARK: - DisplaysListView
 
 extension ListView: DisplaysListView {
     func configure(with viewModel: ListDataFlow.PresentationCollectionView.ViewModel) {
@@ -58,11 +60,11 @@ extension ListView: DisplaysListView {
     }
 }
 
-    // MARK: - ListCollectionManagerDelegate
+// MARK: - ListCollectionManagerDelegate
 
 extension ListView: ListCollectionManagerDelegate { }
 
-    // MARK: - Private
+// MARK: - Private
 
 private extension ListView {
     func addSubviews() {
@@ -76,14 +78,16 @@ private extension ListView {
     func makeCollectionViewConstraints() {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         var constraints = [NSLayoutConstraint]()
-        constraints.append(collectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor))
-        constraints.append(collectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor))
-        constraints.append(collectionView.topAnchor.constraint(equalTo: self.topAnchor))
-        constraints.append(collectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor))
+        constraints.append(collectionView.leadingAnchor.constraint(equalTo: leadingAnchor))
+        constraints.append(collectionView.trailingAnchor.constraint(equalTo: trailingAnchor))
+        constraints.append(collectionView.topAnchor.constraint(equalTo: topAnchor))
+        constraints.append(collectionView.bottomAnchor.constraint(equalTo: bottomAnchor))
         
         NSLayoutConstraint.activate(constraints)
     }
 }
+
+// MARK: - Constants
 
 private extension ListView {
     private enum Constants {

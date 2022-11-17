@@ -19,7 +19,7 @@ final class ListPresenter {
     weak var viewController: ListViewDisplayLogic?
 }
 
-    // MARK: - ListPresentationLigic
+// MARK: - ListPresentationLigic
 
 extension ListPresenter: ListPresentationLigic {
     func presentData(response: ListDataFlow.PresentationCollectionView.Response) {
@@ -28,7 +28,7 @@ extension ListPresenter: ListPresentationLigic {
     }
 }
 
-    // MARK: - Private
+// MARK: - Private
 
 private extension ListPresenter {
     func makeCellViewModel(from response: Employee) -> ListDataFlow.CellViewModel {
@@ -39,7 +39,7 @@ private extension ListPresenter {
     }
 }
 
-    // MARK: - Constants
+// MARK: - Constants
 
 private extension ListPresenter {
     enum Constants {

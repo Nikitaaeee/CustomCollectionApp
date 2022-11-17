@@ -14,6 +14,15 @@ public enum ListEndPoint {
     // MARK: - EndPointType
 
 extension ListEndPoint: EndPointType {
+    
+    var scheme: String {
+        return "https"
+    }
+    
+    var hostURL: String {
+        return "run.mocky.io"
+    }
+    
     static let version = "/v3"
 
     var path: String {
@@ -37,4 +46,6 @@ extension ListEndPoint: EndPointType {
     var headers: HTTPHeaders? {
         return nil
     }
+    
+    
 }

@@ -31,7 +31,7 @@ final class EmployeeListProvider {
     }
 }
 
-    // MARK: - ProvidesEmployeeData
+// MARK: - ProvidesEmployeeData
 
 extension EmployeeListProvider: ProvidesEmployeeData {
     func fetchData(completion: @escaping ([Employee]?) -> Void) {
@@ -49,7 +49,7 @@ extension EmployeeListProvider: ProvidesEmployeeData {
     }
 }
 
-    // MARK: - Private
+// MARK: - Private
 
 private extension EmployeeListProvider {
     func isOutdated() -> Bool {
@@ -80,7 +80,7 @@ private extension EmployeeListProvider {
     }
 }
 
-    // MARK: - Constants
+// MARK: - Constants
 
 private extension EmployeeListProvider {
     enum Constants {

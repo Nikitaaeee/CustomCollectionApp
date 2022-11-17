@@ -18,7 +18,7 @@ final class ListRouter {
     weak var viewController: ListViewController?
 }
 
-    // MARK: - ListRoutes
+// MARK: - ListRoutes
 
 extension ListRouter: ListRoutes {
     func didRequestAlert(title: String, message: String) {
@@ -36,7 +36,7 @@ extension ListRouter: ListRoutes {
     }
 }
 
-    // MARK: - Constants
+// MARK: - Constants
 
 private extension ListRouter {
     enum Constants {

@@ -1,11 +1,15 @@
 //
-//  ParametersEncoding.swift
+//  ParameterEncoder.swift
 //  CustomCollectionApp
 //
 //  Created by Nikita Kirshin on 13.11.2022.
 //
 
 import Foundation
+
+public protocol ParameterEncoder {
+    static func encode(urlRequest: inout URLRequest, with parameters: Parameters) throws
+}
 
 public enum NetworkError: String, Error {
     case successfulConnection = "Successful connection"
@@ -19,6 +23,3 @@ public enum NetworkError: String, Error {
 
 public typealias Parameters = [String: Any]
 
-public protocol ParameterEncoder {
-    static func encode(urlRequest: inout URLRequest, with parameters: Parameters) throws
-}

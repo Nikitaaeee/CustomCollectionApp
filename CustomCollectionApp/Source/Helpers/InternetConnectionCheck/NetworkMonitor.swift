@@ -1,5 +1,5 @@
 //
-//  Netork.swift
+//  NetworkMonitor.swift
 //  CustomCollectionApp
 //
 //  Created by Nikita Kirshin on 17.11.2022.
@@ -12,7 +12,7 @@ extension Notification.Name {
     static let connectivityStatus = Notification.Name(rawValue: Constants.connectivityStatus)
 }
 
-    // MARK: - CaseIterable
+// MARK: - CaseIterable
 
 extension NWInterface.InterfaceType: CaseIterable {
     public static var allCases: [NWInterface.InterfaceType] = [
@@ -61,7 +61,7 @@ final class NetworkMonitor {
     }
 }
 
-    // MARK: - Constants
+// MARK: - Constants
 
 private extension NetworkMonitor {
     enum Constants {
