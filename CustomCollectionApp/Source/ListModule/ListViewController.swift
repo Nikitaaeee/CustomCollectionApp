@@ -59,6 +59,7 @@ final class ListViewController: UIViewController {
 private extension ListViewController {
     func configureNavigationBar() {
         navigationItem.rightBarButtonItem = rightBarButton
+        self.title = Constants.navBarTitle
     }
     
     func addConnectionObserver() {
@@ -97,5 +98,6 @@ private extension ListViewController {
         static let refreshButtonImage: String = "arrow.clockwise.icloud.fill"
         static let noConnectionTitle: String = "No Internet Connection"
         static let noConnectionMessage: String = "Make Sure Your Device Connected To Internet"
+        static let navBarTitle: String = "Avito"
     }
 }
